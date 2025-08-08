@@ -26,3 +26,12 @@ WHERE UserID = 1;
 
 -- Delete a user from the table
 DELETE FROM Users WHERE UserID = 3;
+
+-- Add a new column to the Users table
+ALTER TABLE Users
+ADD LastLogin DATETIME DEFAULT NULL;
+
+-- Update the LastLogin column for a specific user
+UPDATE Users
+SET LastLogin = CURRENT_TIMESTAMP
+WHERE Username = 'johndoe';
